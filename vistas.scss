@@ -1,0 +1,284 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "mixins.scss";
+
+// noticias
+
+@function colms($n){
+	@return $at / $n;
+}
+
+@function colms2($y){
+	$pres : percentage(($y / 10) * $un);
+	@return $pres;
+}
+
+@function pad ($p){
+	$pad : ($p / 10) * $un;
+	$vpad : percentage($pad / $maxcols);
+	@return $vpad;
+}
+
+// **************** Noticias
+
+.views-noticias-wrap{
+	text-align: center;
+	h3{
+		a{
+			color: $verde;
+			font-size: 0.9em;
+			text-decoration: none;
+		}
+	}
+	.wrapitemnoticia{
+		width: 100%;
+		margin-bottom: 80px;
+		.views-field-title{
+			span{
+				a{
+					
+				}
+			}
+		}
+		.views-field-title{
+			width: 60%;
+			margin: 0 auto;
+		}
+		.views-field-field-img-noticia{
+			width: 60%;
+			margin: 0 auto;
+			.field-content{
+				a{
+					img{
+						width: 100%;
+						height: auto;
+					}
+				}
+			}
+		}
+		.views-field-field-contenido-noticia{
+			width: 75%;
+			margin: 0 auto;
+			.field-content{
+				p{
+					text-align: center;
+					font-size: 1.2em;
+					margin-left: 20px;
+					.views-more-link{
+						margin: 0 auto;
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+}
+
+.views-more-link{
+	display: block;
+	padding: 6px 10px;
+	background: $verde;
+	color: $blanco;
+	text-decoration: none;
+	width: 120px;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1em;
+    &:hover{
+    	background: $verdeClaro;
+    	color: $blanco;
+    }
+}
+
+// testimonios
+
+.wrapTestimonios, .test-representantes{
+	vertical-align: top;
+		.view-content{
+			@include flexo2;
+			@include flex-wrap(wrap);
+		}
+	.wrapitemtestimonio, .wrapitemtestrepresentaciones{
+		padding: 0px 12px 20px 12px;
+		width: 32%;
+		.views-field-title{
+			padding: 14px 0;
+			a{
+				font-size: 1.3em;
+				color: $azul;
+			}
+		}
+		.views-field-field-nombre{
+				font-weight: bold;
+		}
+		.views-field-body{
+			p{
+				padding-top: 20px;
+				color: $grisOscuro;
+				text-align: justify;
+			}
+		}
+		.views-field-view-node{
+			span{
+			border: none;
+				a{
+					color: $blanco;
+					background: $azul;
+					padding: 5px 12px;
+					@include border-radius(3px);
+					@include transicion(300ms);
+					&:hover{
+						tex-decoration: none;
+						background: $verde;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// catálogo
+
+.wrapCatalogo{
+		width: 100%;
+		display: block;
+		margin: 0 auto;
+
+		.view-content{
+			text-align: center;
+			.wrapitemcatalogo:nth-child(1) {
+				.views-field-field-img-catalogo{
+					a{
+						img{
+							margin-top: 25%;
+							transform: scale(1.7);
+						}
+					}
+				}
+			}
+		}
+
+	.wrapitemcatalogo{
+		display: inline-block;
+		padding: 12px;
+		margin: 0 20px;
+		width: 22%;
+    	vertical-align: top;
+
+    	.views-field-field-img-catalogo, .views-field-title{
+			text-align: center;
+    	}
+
+		.views-field-field-img-catalogo{
+			height: 220px;
+			img{
+				max-width: 120px;
+				height: auto;
+				&:hover{
+					opacity: 0.8;
+				}
+			}
+		}
+
+		.views-field-field-descripcion{
+			.field-content{
+				p{
+					font-size: 0.8em;
+					color: $gris;
+				}
+			}
+		}
+
+		.views-field-title{
+			text-align: center;
+			h5{
+				a{
+					color: $verde;
+					text-decoration: none;
+					font-weight: lighter;
+					&:hover{
+						color: $rojo;
+					}
+				}
+			}
+		}
+	}
+}
+
+// puestos vacantes
+.page-puestos-de-empleo-vacantes{
+	.views-field-title{
+		font-size: 1.4em;
+		padding: 12px 0;
+		font-weight: bold;
+		a{
+			color: $verde;
+		}
+	}	
+}
+
+
+// Blog
+
+.blogWrapper{
+	width: colms(1);
+	margin: 0 auto;
+	.view-content{
+		.blogitemwrapper {
+			margin-bottom: 40px;
+			clear: both;
+			.views-field-title{
+				text-align: left;
+				padding: 0 0 20px 0;
+				margin-left: 32%;
+				span{
+					a{
+						font-size: 2.5em;
+						color: $azul;
+						text-decoration: none;
+						@include transicion(300ms);
+						&:hover{
+							color: $verde;
+						}
+					}
+				}
+			}
+			.views-field-field-foto-blog{
+				float: left;
+				width: 30%;
+				a{
+					img{
+						@include wyh;
+						@include transicion(300ms);
+						&:hover{
+							opacity: 0.8;
+						}
+					}
+				}
+			}
+			.views-field-body{
+				margin-left: 32%;
+				padding: 0;
+				p, ul li{
+					color: $gris;
+					text-align: justify;
+				}
+				.views-more-link {
+				    text-align: center;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

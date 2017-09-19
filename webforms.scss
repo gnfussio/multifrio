@@ -1,0 +1,116 @@
+@import "mixins.scss";
+
+// contactenos y ubicación
+
+.wfm-gen { // atributos genericos
+	padding: 20px;
+    width: 50%;
+    margin: 0 auto;
+    background: white;
+}
+.cumulos {
+	background: url('/multifrio16/sites/default/files/cielo.jpg');
+	-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-ms-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;	
+}
+.bn{
+	display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    background: $verde;
+    color: blanco;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    padding: 8px 14px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.bnverde{
+	@extend .bn;
+	color: $blanco;
+	text-decoration: none;
+	@include transicion(300ms);
+	&:hover{
+		background: $azul;
+	}
+}
+
+#block-webform-client-block-32, #block-block-13{
+		float: left;
+		width: 46%;
+		padding: 1.5%;
+		min-width: 280px;
+		margin-top: 20px;
+	h4{
+		font-size: 1.5em;
+	}
+	p{
+		color: $grisOscuro;
+	}
+	.form-actions{
+		input{
+			padding: 12px 20px;
+			background: $azul;
+			color: $blanco;
+			text-transform: uppercase;
+			border: none;
+			@include borderRadius(3px);
+			@include transition(300ms);
+			&:hover{
+				background: $rojo;
+			}
+		}
+	}
+}
+
+.page-node-43 #page, .page-node-44 #page, .page-node-45 #page, .page-node-52 #page{
+	@extend .cumulos;
+}
+
+.webform-client-form-43, .webform-client-form-44, .webform-client-form-45, .webform-client-form-52{
+	@extend .wfm-gen;
+}
+
+.webform-client-form{
+	input[type='submit'].form-submit{
+		@extend .bn;
+		color: $blanco;
+		@include transicion(300ms);
+		&:hover{
+			background: $azul;
+		}
+	}
+	label{
+		margin-bottom: 12px;
+	}
+
+}
+
+// webform en los modals
+.modal-body{
+	.modal-title{
+		color: $azul;
+	}
+	.webform-client-form{
+		width: 100%;
+		.form-actions{
+			text-align: center;
+		}
+	}
+}
+
+

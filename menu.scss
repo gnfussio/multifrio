@@ -1,0 +1,114 @@
+@import "mixins.scss";
+@import "compass/css3";
+
+//  =============  MENU 
+
+#block-menu-menu-menu-principal{
+	
+	ul.menu{
+		    text-align: center;
+		    padding-top: 14px;
+		    margin-top: 20px;
+		li{
+			display: inline-block;
+			position: relative;
+			padding: 0;
+    		margin: 0;
+    		@include transicion(300ms);
+			> a{
+				padding: 10px 14px;
+				color: $azul;
+				font-size: 1em;
+				text-decoration: none;
+				text-transform: uppercase;
+				&:hover{
+					color: $verde;
+				}
+			}
+			// submenu
+			ul.menu{
+				display: none;
+				position: absolute;
+				width: 100%;
+				min-width: 200px;
+				z-index: 15; // use el z-index que necesite
+				left: 0;
+				top: 30px;
+				padding: 0px;
+				max-width: 200px!important;
+				margin-top: 0px;
+				background: $blanco;
+				border-top: solid 3px $verde;
+				li{
+					display: block;
+					padding: 8px 12px;
+					@include transicion(300ms);
+					a{
+						width: 100%;
+						color: $azul;
+						background: transparent;
+						padding: 0px;
+						display: block;
+						font-size: 0.8em;
+						line-height: 25px;
+						@include transicion(300ms);
+						&:hover {
+							
+						}
+					}
+					&:hover{
+						background: $verde;
+						a{
+							color: $blanco;
+						}
+					}
+				}
+			}
+			// final submenu
+		}
+	}
+}
+
+// esconde las rayitas
+.wrapMenuToggle{
+	display:none;
+
+	.menurayas, .menuequis{
+		cursor: pointer;
+	}
+	.menuequis{
+		display: none;
+	}
+}
+
+// side menu
+#block-menu-menu-categorias-noticias{
+	margin-top: 30px;
+}
+
+#block-menu-menu-menu-categor-as-de-noticias, #block-menu-menu-categorias-noticias{
+	h2{
+		display: block;
+		font-size: 1.5em;
+	}
+	.content{
+		ul.menu{
+			li{
+				list-style: none;
+				@include display-flex(flex);
+				a{
+					color: $azul;
+					font-size: 1.1em;
+					width: 100%;
+					padding: 6px 0;
+					border-bottom: solid 1px $azul;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+
+
+

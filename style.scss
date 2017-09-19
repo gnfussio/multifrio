@@ -1,0 +1,1308 @@
+
+@import "compass/reset";
+@import "compass/css3";
+@import "menu.scss";
+@import "mixins.scss";
+@import "vistas.scss";
+@import "responsive.scss";
+@import "webforms.scss";
+
+@function colms($n){
+	@return $at / $n;
+}
+
+@function colms2($y){
+	$pres : percentage(($y / 10) * $un);
+	@return $pres;
+}
+
+@function pad ($p){
+	$pad : ($p / 10) * $un;
+	$vpad : percentage($pad / $maxcols);
+	@return $vpad;
+}
+
+// logo
+
+.logo{
+	img{
+		width: 90%;
+	}
+}
+
+body {
+	font-size: 12px;
+	font-family: $tipo;
+}
+
+p { 
+	margin: 0 0 25px;
+	padding: 0;
+	color: $azul;
+}
+
+em, i{
+	font-style: italic;
+}
+
+p, p ul li {
+	font-size: 1.2em;
+	line-height: 1.3em;
+}
+
+a {
+	@include transition(300ms);
+}
+
+strong{
+	font-weight: bold;
+	font-weight: 700;
+}
+
+#page{
+	padding-bottom: 40px;
+}
+
+a:hover { text-decoration: underline;  }
+a:focus { outline: none; text-decoration: none; }
+
+::-moz-selection { background-color: $rojo; }
+::selection { background-color: $rojo; }
+
+/*Heading*/
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+	line-height: 120%;
+	padding: 0;
+	margin: 20px 0 10px 0;
+	font-family: 'Open Sans', sans-serif; 
+}
+
+h2, h3, h4, h5{
+	color: $verde;
+}
+
+h1 { font-size: 36px }
+h2 { font-size: 30px }
+h3 { font-size: 24px }
+h4 { font-size: 20px }
+h5 { font-size: 18px }
+h6 { font-size: 16px }
+h1.page-title { font-size: 32px; }
+
+
+.topElementos{
+	@include flexo3;
+	.telefonoGrande{
+		text-align: right;
+		p{
+			margin: 0 20px;
+		}
+		strong{
+			font-size: 31.04px;
+		    font-weight: 700;
+		    color: $azul;
+		    padding-top: 10px;
+    		display: block;
+    		a{
+    			text-decoration:none;
+    			color: $azul;
+    		}
+		}
+		span{
+			color: $azul;
+			font-style: italic;
+			font-style: 0.75em;
+		}
+	}
+	.goContact {
+		margin: 0 0 0 16px;
+		@include display-flex(flex);
+		@include align-items(center);
+		p{
+			margin: 0;
+			a{
+				color: $azul;
+				text-decoration: none;
+				&:hover{
+					color: $verde;
+				}
+			}
+		}
+	}
+}
+
+
+.feed-icon, 
+.front #block-system-main, 
+.block h2, 
+#block-webform-client-block-43, 
+#block-webform-client-block-44, 
+#block-webform-client-block-45, 
+#block-webform-client-block-52 {
+	display:none;
+}
+
+#header-top, #main, #block-block-4{
+	margin-top: 30px;
+}
+
+.wrapperFlex{
+	@include flexo;
+}
+.wrapperFlex2{
+	@include flexo2;
+}
+.wrapperFlex3{
+	@include flexo3;
+}
+
+// Socios Estratégicos
+
+#block-block-26{
+	h2{
+		display: block!important;
+		text-align: center;
+		color: $azul;
+	}
+}
+
+section.sociosestrategicos{
+	margin: 30px 0;
+	width: 100%;
+	max-width: 1200px;
+	margin: 30px auto 0 auto;
+	.wrapperLogos{
+		@include display-flex(flex);
+		@include justify-content(space-around);
+		@include flex-wrap(wrap);
+		figure{
+			padding: 0 4px;
+			min-width: 200px;
+			text-align: center;
+			img{
+				width: 80%;
+			}
+		}
+	}
+}
+
+//titulares
+//  titular ancho total / funciona para basic page
+#block-block-4{
+	background: $azul;
+	padding: 30px 0px  50px 0px;
+	h1{
+		text-transform: uppercase;
+		color: $blanco;
+	}
+}
+
+.fondoGris{
+	background: $grisClaro3;
+}
+
+// Slide Show - fix
+
+#block-views-slideshow-block-1 {
+	margin-top: 30px;
+	overflow: hidden;
+	position: relative;
+}
+
+.views_slideshow_cycle_main {
+  width: 100%;
+  float: left;
+  overflow: hidden;
+}
+.views_slideshow_cycle_main .views-slideshow-cycle-main-frame {
+  width: 100% !important;
+  height: auto;
+}
+.views_slideshow_cycle_main .views-slideshow-cycle-main-frame-row {
+  width: 100% !important;
+  height: auto;
+}
+.views_slideshow_cycle_main .field-content {
+  max-width: 100%;
+  width: 100%;
+}
+.views_slideshow_cycle_main .field-content img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+.views_slideshow_cycle_main {
+		height: 450px;
+}
+
+	// Slide Show - controlers
+
+#views_slideshow_controls_text_slideshow-block_1{
+    position: absolute;
+    z-index: 9;
+    top: 45%;
+	width: 100%;
+	span{
+		a{
+			color: transparent;
+		}
+	}
+	#views_slideshow_controls_text_previous_slideshow-block_1, 
+	#views_slideshow_controls_text_next_slideshow-block_1{
+		position: absolute;
+		top: 35%;
+		width: 48px;
+		height: 48px;
+		&:hover{
+			opacity: 0.8em;
+		}
+	}
+	#views_slideshow_controls_text_previous_slideshow-block_1{
+		left: 3%;
+		background: url('/sites/default/files/ant2.jpg');
+		a{
+
+		}
+	}
+	#views_slideshow_controls_text_pause_slideshow-block_1{
+		display: none;
+	}
+	#views_slideshow_controls_text_next_slideshow-block_1{
+		background: url('/sites/default/files/sig2.jpg');
+		left: 95%;
+	}
+}
+
+//video en front page
+
+.videosfp{
+	@include displayInLineTotal;
+	padding: 30px 0;
+	.wrapperFlex{
+		@include flexo;
+		.videoYT, .textosLado{
+			width: 47%;
+		} 
+		.videoYT {
+			iframe{
+				float: right;
+			}
+		}
+		.textosLado {
+				margin-left: 5%;
+			span, strong{
+				text-transform: uppercase;
+				font-size: 1.6em;
+				color: $azul;
+			}
+
+			span{
+				
+			}
+			strong{
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+// seccion proyectos
+
+.boxBeigeclaro{
+	background: $verdeClaro;
+}
+.boxBeigeoscuro{
+	background: $verde;
+}
+
+.linksProyectos{
+	@include displayInLineTotal;
+
+		.boxBeigeclaro{
+			background: url(/sites/default/files/enproceso.jpg);
+			@include bgcover;
+			background-position-y: -160px;
+			span, strong{
+				width: 100%;
+			}
+			span, strong, a{
+				float: right;
+				margin-right: 30px;
+				text-align: right;
+			}
+			span, strong{
+				text-shadow: 1px 1px 1px $negro;
+			}
+		}
+		.boxBeigeoscuro{
+			background: url(/sites/default/files/cortijo.jpg);
+			@include bgcover;
+			span, strong{
+				width: 90%;
+			}
+			span, strong, a{
+				float: left;
+				margin-left: 30px;
+			}
+			span, strong{
+				text-shadow: 1px 1px 1px #000000;
+			}
+		}
+
+		.boxBeigeclaro, .boxBeigeoscuro{
+			height: 240px;
+			width: 49.9%;
+			padding: 30px 0;
+			position: relative;
+			margin-bottom: 50px;
+			strong, span{
+				text-transform: uppercase;
+				font-size: 1.6em;
+				color: $blanco;
+			}
+			strong{
+				font-weight: bold;
+			}
+			.btnProyectos{
+				position: absolute;
+				top: 100%;
+				width: 100%;
+				text-align: center;
+				a{
+					display: block;
+					width: 100%;
+					margin: 0;
+					padding: 12px 0;
+					text-transform: uppercase;
+					text-decoration: none;
+					background: $azul;
+					color: $blanco;
+					float: inherit;
+				    text-align: center;
+					&:hover{
+						background: $azul + 40;
+					}
+				}
+			}
+		}
+
+}
+
+// Links a cotizar
+
+.linksCotizar{
+	margin-top: 30px;
+	.fondoGris{
+		padding: 30px 0;
+		.textos, .botones{
+			width: 49.5%;
+		}
+		.textos{
+			margin-right: 30px;
+			strong, span{
+				color: $blanco;
+				float: right;
+			    width: 100%;
+				text-align: right;
+			}
+			strong{
+				font-weight: bold;
+				font-size: 1.2em
+			}
+			span{
+				font-size: 1em;
+			}
+		}
+		.botones{
+			margin-left: 30px;
+			.bnt-wf{
+				text-transform: uppercase;
+				display: inline-block;
+				padding: 10px;
+				margin: 7px;
+				text-decoration: none;
+				border: solid 2px $blanco;
+				color: $blanco;
+				white-space:nowrap;
+				font-size: 0.9em;
+				cursor: pointer;
+				&:hover{
+					background: $azul;
+					color: $blanco;
+				}
+			}
+		}
+	}
+}
+
+.wrapperLiknsVarios{
+	.wrapperFlex{
+		.itemLink{
+			@include border-radius(8px);
+				width: 160px;
+				height: 160px;
+				margin: 30px;
+				@include display-flex(flex);
+				@include align-items(center);
+				@include justify-content(center);
+				@include transition(300ms);
+			a{
+				text-transform: uppercase;
+				color: $azul;
+				font-size: 1.3em;
+				text-decoration: none;
+			}
+			&:hover{
+				background: $verdeClaro;
+			}
+		}
+	}
+}
+
+//Link sifras
+
+.wrapperSifras{
+	background: $azul;
+	padding: 30px 0;
+	.wrapperFlex{
+		.itemSifras{
+			color: $blanco;
+			margin: 0 30px;
+			text-align: center;
+			figure{
+				img{
+				
+				}
+			}
+			strong, span{
+				text-transform: uppercase;
+				width: 100%;
+				display: block;
+				padding: 6px;
+				font-size: 1.2em
+			}
+			strong.numero{
+				font-size: 3em;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			strong{
+				font-weight: bold;
+			}
+			span{
+				
+			}
+		}
+	}
+}
+
+//Link Logos patrocinadores
+
+.wrapperPatrocinadores{
+	margin-top: 30px;
+	.wrapperTYL{
+		padding: 30px 0;
+		margin: 0 auto;
+		border-top: solid 1px $grisOscuro;
+		width: 60%;
+		.wrapperFlex3{
+			.textos, .logos{
+				margin: 0 30px;
+				width: 45%;
+			}
+			.textos{
+				span, strong{
+					width: 100%;
+					float: right;
+					text-align: right;
+					text-transform: uppercase;
+					color: $azul;
+					font-size: 1.3em;
+				}
+				strong{
+					font-weight: bold;
+				}
+			}
+			.logos{
+				figure{
+					text-align: center;
+					float: left;
+					margin: 0 12px;
+					img{
+						float: left;
+						margin: 0 5px 10px 5px;
+					}
+				}
+			}
+		}	
+	}
+}
+
+// tecnologias
+
+#tecnologias{
+	figure{
+		padding: 0 20px;
+		img{
+			width: 100%;
+		}
+	}
+}
+
+// servicios
+
+#servicios{
+	width: 60%;
+	margin: 0 auto;
+	.itemServicio{
+		cursor: pointer;
+		width: 100%;
+		height: 200px;
+		@include flexo3;
+		margin-bottom: 12px;
+		border: solid 4px $verde;
+		figure{
+			img{
+				@include wyh;
+			}
+			svg{
+				fill: $blanco!important;
+			}
+		}
+		p{
+			text-transform: uppercase;
+			font-size: 1.2em;
+			color: $azul;
+		}
+		&:hover{
+			opacity: 0.8;
+		}
+	}
+}
+
+// modal generico
+
+.modal-content {
+	background: $blanco;
+	p img{
+		padding: 14px;
+	}
+	.modal-header{
+		text-align: center;
+	}
+	.modal-footer{
+		.btn-default{
+			background: $azul!important;
+			color: $blanco!important;
+			&:hover{
+				background: lighten($azul, 20)!important;
+			}
+		}
+	}
+		.modal-body{
+		overflow: hidden;
+		figure{
+			text-align: center;
+			img{
+				@include wyh;
+				max-width: 230px;
+			}
+		}
+		p{
+			img{
+				@include wyh;
+			}
+		}
+	}
+}
+
+// Historia
+
+section#historia{
+		width: 70%;
+	    margin: 0 auto;
+	    display: block;
+	    h4{
+
+	    }
+	figure{
+		margin-bottom: 30px;
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+	.itemsWrapper{
+		margin-top: 30px;
+		article.itemHistoria{
+			display: inline-block;
+			figure{
+				img{
+
+				}
+			}
+			.date{
+				@include flexo3;
+				strong{
+					font-size: 1.3em;
+					font-weight: bold;
+					color: $azul;
+					&:before{
+						content: '•  ';
+					}
+				}
+			}
+
+			p{
+				
+			}
+		}	
+	}
+}
+
+
+// noticias
+
+.field-name-field-contenido-noticia{
+	p{
+		font-size: 1.2em;
+		text-aligcn: justify;
+	}
+}
+
+.field-name-field-img-noticia{
+	.field-items{
+		.field-item{
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+
+// proyectos terminados
+
+nav.selector-proyectos{
+	ul{
+		@include flexo2;
+		padding: 20px 0;
+		li{
+
+			text-align: center;
+			div{
+				text-transform: uppercase;
+				@include transition(300ms);
+				padding: 6px 8px;
+				cursor: pointer;
+				&:hover{
+					background: $verde;
+					color: $blanco;
+				}
+			}
+		}
+	}
+}
+
+.wrapProyectosTerminados{
+	@include flexo2;
+	@include flex-wrap(wrap);
+	.itemProyecto{
+		width: 22%;
+		figure{
+			padding: 4px;
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+
+// Testimonios
+
+.node-type-testimonios {
+	.field-type-text-with-summary {
+		p{
+			padding: 20px 0;
+			text-align: justify;
+			color: $grisOscuro;
+		}
+	}
+	.field-name-field-youtube{
+		.field-item{
+			text-align: center;
+		}
+	}
+	.field-name-field-logo-empresa{
+		.field-item{
+			padding-bottom: 30px;
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+
+.views-field-view-node{
+	margin-top: 20px;
+	span{
+		a{
+			
+		}
+	}
+}
+
+// catálogo
+
+// Blocks para los pdfs de los fichas tecnicas AIRPRO
+#block-block-23, #block-block-24, #block-block-25{
+	margin-top: 40px;
+	.btn-ft{
+		background: $verde;
+		padding: 12px 24px;
+		max-width: 163px;
+		color: $azul;
+		font-size: 1.1em;
+		text-transform: uppercase;
+	    text-align: center;
+	    margin-bottom: 20px;
+	    border-radius: 5px;
+	    font-weight: bolder;
+	    @include transition(300ms);
+	    &:hover{
+	    	background: $azul;
+	    	a{
+				color: $blanco;
+				text-decoration: none;
+	    	}
+	    }
+	}
+}
+
+.page-node-23, .page-airpro{
+	#page{
+		background: url('/sites/default/files/fotografia-fondo.jpg');
+		@include background(cover);
+		background-position-y: 100%;
+	}
+}
+
+.page-node-22 {
+	#page{
+		background: url('/sites/default/files/aire-fondo27.jpg');
+		@include background(cover);
+		background-position-y: 100%;
+	}
+}
+
+.page-node-21 {
+	#page{
+		background: url('/sites/default/files/aire-fondo28.jpg');
+		@include background(cover);
+		background-position-y: 100%;
+	}
+}
+
+.espacio{
+	height: 300px;
+}
+
+.node-type-catalogo{
+	.field-name-field-descripcion, .field-name-field-beneficios, .field-name-field-ventajas{
+		.field-label {
+			padding: 20px 0 20px 0;
+			font-size: 1.5em;
+			color: $azul;
+		}
+		p{
+			color: $grisOscuro;
+			font-size: 1.2em;
+		}
+	}
+}
+
+#block-block-11{
+	margin-top: 30px;
+	h3{
+		text-align: center;
+		color: $azul;
+		padding: 20px;
+	}
+}
+
+
+
+// premios y reconocimientos
+
+section.premios-reconocimientos{
+	.wrapperPremios{
+		@include flexo3;
+		@include flex-wrap(wrap);
+		.wrapperitempremios{
+				width: 22%;
+				text-align: center;
+				margin-bottom: 20px;
+				position: relative;
+				overflow: hidden;
+				figure{
+					img{
+						width: 100%;
+						height: auto;
+					}
+				}
+			.wrapTogglText{
+				position: absolute;
+				background: rgba($verde, 0.7);
+				width: 100%;
+				height: 100%;
+				top: 100%;
+				@include transition(300ms);
+				h5{
+					color: $blanco;
+					text-transform: uppercase;
+				}
+				p{
+					color: $blanco;
+				}
+				a{
+					background: $azul;
+					border: solid 1px $blanco;
+					color: $blanco;
+					&:hover{
+						background: $rojo;
+						color: $blanco;
+					}
+				}
+			}
+			&:hover{
+				.wrapTogglText{
+					top: 0%;
+				}
+				
+			}
+		}
+	}
+}
+
+// multimac
+
+section.multimac{
+	figure{
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+	h5{
+
+	}
+	p{
+		font-size: 1.2em;
+		color: $grisOscuro;
+	}
+}
+
+// footer
+
+#subfooter{
+	background: $grisClaro;
+	padding: 20px 0;
+	display: inline-block;
+	width: 100%;
+	strong{
+		color: $azul;
+		font-weight: bold;
+	}
+	.footerItems{
+		.logosFooter{
+			@include flexo2;
+			@include flex-wrap(wrap);
+			figure {
+				img {
+					padding: 0 2px;
+					width: 85%;
+					margin: 0 auto;
+					height: auto;
+				}
+			}		
+		}
+	}
+}
+
+// Quienes somos
+
+.quienessomos{
+	h5{
+		margin-bottom: 25px; 
+	}
+	p{
+		font-size: 1.2em;
+		color: $grisOscuro;
+	}
+	figure{
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+// block nuestro productos
+
+#block-block-14{
+	h3{
+		text-align: center;
+		padding: 30px 0;
+	}
+}
+
+// SVG
+.ciclodecalidad{
+	svg{
+		width: 100%;
+	}
+	figure{
+		img{
+			@include wyh;
+		}
+	}
+}
+
+.circuloItem{
+	display: none;
+}
+
+.simulacion{
+	display: block;
+}
+
+#financiamiento, #disenoyplanos, #simulacion, #mantenimiento, #marcha, #supervicion, #fabricacion{
+	@include transicion(300ms);
+	cursor: pointer;
+	&:hover{
+		fill: $verde!important;
+	}
+}
+.fondoRojo{
+	fill: $verde!important;
+}
+
+// Representaciones
+
+.representaciones{
+	figure{
+		padding: 12px;
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+ // owl carousell
+ 
+ owl-carousel{
+	.item{
+		text-align: center;
+		a{
+			
+		}
+	}
+ }
+
+// Tecnologías
+
+.wrapperItemsTecs{
+	.itemWrapTecs{
+		.wrapTitleTecs{
+			h4.titleTecs{
+				font-size: 1.5em;
+				font-weight: bold;
+				color: $verde;
+				cursor: pointer;
+				@include transicion(300ms);
+				&:hover{
+					color:$azul;
+				}
+			}
+		}
+		.wrapPanelColapsado{
+			display: none;
+			.colapsadoTxt{
+				font-size: 0.8;
+				line-height: 18px;
+			}
+		}
+	}
+}
+
+.wrapImagesTecs{
+	figure{
+		display:none;
+	}
+}
+
+// Descripción de Productos
+
+.field-name-field-img-catalogo {
+	img{
+		max-width: 100%;
+	}
+}
+
+// representaciones
+
+section.representaciones{
+	.wraplogos{
+		margin-bottom: 40px;
+	}
+	.wraplogos{
+		margin-bottom: 80px;
+    	width: 100%;
+    	display: inline-block;
+		figure{
+			height: 115px;
+			overflow: hidden;
+			img{
+				margin-top: -21%;
+				width: 80%;
+			}
+		}
+	}
+}
+
+// Ajuste al Lightbox
+
+.xt-lightbox-content{
+	overflow: hidden!important;
+}
+
+// Ajuste al Lightbox
+
+.node-galer-a-de-proyectos{
+	.field-name-field-fotos-proyectos{
+		.field-items{
+			@include flexo2;
+			@inlcude justify-content(space-around);
+			.field-item{
+				width: 23%;
+				img{
+					@include wyh;
+				}
+			}
+		}	
+	}
+}
+
+
+/// indicación en círculo
+
+figure.indicacion{
+	    position: absolute;
+	    width: 97%;
+	    height: 100%;
+	    text-align: center;
+	img{
+	    width: 70%;
+	    max-width: 315px;
+	    vertical-align: middle;
+	    margin-top: 17%;
+	}
+}
+
+//  videos
+
+section.videos{
+	margin-bottom: 40px;
+	figure{
+		padding: 14px;
+		text-align: center;
+	}
+}
+
+.node-type-galer-a-de-proyectos{
+	.field-name-field-fotos-proyectos{
+		.field-items{
+			@include flexo2;
+			@include flex-wrap(wrap);
+			.field-item{
+				position: relative;
+				width: 23%;
+				margin: 5px;
+				overflow: hidden;
+    			height: 150px;
+				img{
+					width: 120%;
+					@include transicion(500ms);
+					&:hover{
+						margin-left: -30px;
+					}
+				}
+				.tituloProyecto{
+					position: absolute;
+					z-index: 2;
+					top: 5px;
+					padding: 3px 4px;
+					background: rgba($negro, 0.8);
+					color: $blanco;
+					font-size: 0.8em;
+					font-style: italic;
+				}
+			}
+		}
+	}
+}
+
+#caption{
+	p{display:none;}
+}
+
+.selector-gal-proyectos{
+	ul{
+		@include flexo2;
+		@include justify-content(space-around);
+		@include flex-wrap(wrap);
+		margin-bottom: 25px;
+		li{
+			div{
+				cursor: pointer;
+				color: $azul;
+				cursor: pointer;
+				min-width: 70px;
+				padding: 5px;
+				@include transicion(300ms);
+				&:hover{
+					color: $verde;
+				}
+			}
+		}
+	}
+}
+
+/// Animaciones
+
+@include keyframes(anim){
+	0%{
+		opacity: 0;
+	}
+	20%{
+		opacity: 1;
+	}
+	80%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
+.smooth {
+	@include animation(anim 3s infinite linear);
+}
+
+.anoying {
+	@include animation(anim 1s infinite linear);
+	fill: $verde;
+}
+
+// Puestos de Trabajo - Detalles
+
+.node-type-puestos-de-trabajo{
+	.field-type-text-with-summary{
+		.field-label{
+			font-size: 1.4em;
+			padding: 12px 0;
+			font-weight: bold;
+			color: $verde;
+		}
+	}
+}
+
+// Blog
+// Nodes
+
+.node-type-blog{
+	.field-name-field-foto-blog{
+		.field-item{
+			img{
+				@include wyh;
+			}
+		}
+	}
+	.field-name-body{
+		p, ul li{
+			color: $gris;
+		}
+	}
+}
+
+#block-block-18{
+	.content{
+		text-align: center;
+		.bn{
+			margin: 0 auto;
+		}
+	}
+}
+
+// politicas de calidad
+.page-node-103{
+	#page{
+		background: url('/sites/default/files/images/fondo_politica.jpg');
+		@include background(cover);
+		padding: 15% 0 20% 0;
+		margin: 0;
+	}
+	.linksCotizar{
+		margin-top: 0;
+	}
+	section.politicas{
+		max-width: 800px;
+		margin: 0 auto;
+		p{
+			color: $blanco;
+		}
+	}
+}
+
+// flyer temporal se muestra como lightbox
+
+#block-block-27{
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding:0px;
+	background: rgba($negro, 0.9);
+	text-align: center;
+	z-index:10;
+	figure{
+		margin-top: 8%;
+	}
+	.botonCerrar{
+		margin: 20px auto 0 auto;
+		background: tomato;
+		font-size: 1.7em;
+		padding: 7px;
+		width: 90px;
+		color: $blanco;
+		border-radius: 7px;
+		cursor: pointer;
+		@include transicion(300ms);
+		&:hover{
+			background: $blanco;
+			color: $negro;
+		}
+	}
+}
+
+
+
+body{display:inherit}
+

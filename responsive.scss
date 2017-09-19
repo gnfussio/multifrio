@@ -1,0 +1,545 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "mixins.scss";
+
+@media only screen and (min-width: 1201px) {
+	// hasta menos de 1201px el menu se despliega a todo el ancho 
+	#block-menu-menu-menu-principal{
+		display: block;
+	}
+	.views_slideshow_cycle_main {
+  		height: 500px!important;
+	}
+}
+@media only screen and (min-width: 993px) {
+	/* hace que en todas las paginas excepto en la de inicio, el menu se despliegue
+	al lado del logo */ 
+	.not-front {
+		#block-menu-menu-menu-principal {
+			display: inline-block;
+		}
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	// ajuste a la indicaión del circulo de calidad
+	figure.indicacion{
+		img{
+		    margin-top: 21%!important;
+		}
+	}
+	// hasta un máximo de 1200px el la letra se reduce
+	#block-menu-menu-menu-principal{
+		ul.menu{
+			li{
+				a{
+					font-size: 0.9em!important;
+					padding: 10px 3px!important;
+				}
+				ul.menu{
+					li{
+						padding: inherit!important;
+						a{
+							line-height: inherit!important;
+						}
+					}
+				}
+			}
+		}
+	}
+	.views_slideshow_cycle_main {
+  		height: 450px!important;
+	}
+	#servicios{
+		width: 90%!important;
+	}
+}
+
+/* Reset unusual Firefox-on-Android default style, see https://github.com/necolas/normalize.css/issues/214*/
+@media (max-width: 991px)
+{ .form-text, .form-textarea, .block-superfish select, .block-search .form-submit 
+	{ background-image: none;
+	} 
+}
+
+@media only screen and (max-width: 992px) {
+	.views-noticias-wrap{
+		.wrapitemnoticia{
+			margin-bottom: 40px!important;
+		}
+	}
+	// ajuste a la indicaión del circulo de calidad
+	figure.indicacion{
+		img{
+		    margin-top: 38%!important;
+		}
+	}
+	.logo{
+		width: 100%;
+		text-align: center;
+		img{
+			max-width: 200px;
+		}
+		.views_slideshow_cycle_main{
+  			height: 350px!important;
+		}
+	}
+
+	// hace que aparezca la rayas del menu toggle, pero no la equis...
+	.wrapMenuToggle{
+		display:block!important;
+		.menurayas{
+			
+		}
+	}
+
+	// menu mobil
+	// hace que el logo se centre el el ancho de la ventana
+	#block-block-1{ 
+		width: 100%!important;
+		.logo{
+			width: 100%!important;
+			background-position-x: 50%!important;
+			@include background(12%!important);
+			background-repeat: no-repeat;
+		}
+	}
+	// esconde el menu
+	#block-menu-menu-menu-principal{
+		display: none;
+		width: 100%!important;
+		ul.menu{
+			li{
+
+			}
+		}
+	}
+	
+	// ************  menu ****** -- //
+	#block-menu-menu-menu-principal{
+		display: none;
+		
+		// hace que el menu se despliegue a todo el ancho
+		ul.menu{
+			padding: 0!important;
+			background: $azul;
+			li{
+				display: block!important;
+				    background: $azul;
+				    border-bottom: dotted 1px white;
+				    padding: 9px!important;
+				    @include transicion(200ms);
+				a {
+					font-size: 1.5em!important;
+					font-weight: bolder;
+					color: $blanco!important;
+					&:hover{
+						color: $blanco!important;
+						background: transparent!important;
+					}
+				}
+					ul.menu{
+						display: block!Important;
+						position: inherit!Important;
+						margin: 0 auto;
+						left: inherit!important;
+						top: inherit!important;
+						max-width: inherit!important;
+						border-top: solid 3px $azul!important;
+						li{
+							padding: 0px!important;
+							border-bottom: dotted 1px $azul;
+							a{
+								color: $blanco;
+								font-size: 0.8em!Important;
+								font-weight: lighter;
+								&:hover{
+									background: $azul!Important;
+									color: $blanco;
+								}
+								&:focus{
+									background: $verde!important;
+								}
+								&:before{
+									content: '- ';
+								}
+							}
+						}
+					}
+				&:hover, &:focus{
+					background: $azul!important;
+				}
+			}
+		}
+	}
+	.linksCotizar{
+		.textos, .botones{
+			display: inline-block;
+			width: 75%!important;
+		}
+		.textos{
+			margin-right: 0px!important;
+		}
+		.botones {
+			a{
+				margin-top: 10px!important;
+				display: inline-block;
+			}
+		}
+	}
+
+	#servicios{
+		width: 100%!important;
+	}
+	// testimonios
+	.view-testimonios{
+		.view-content{
+			display: block!important;
+		}
+		.wrapitemtestimonio{
+			width: 100%!important;
+		}
+		h4{
+			text-align: center;
+		}
+		.views-field-field-youtube{
+			a{
+				width: 100%;
+				display: block;
+				text-align: center;
+			}
+		}
+	}
+
+	.wrapperPremios, .wrapProyectosTerminados{
+		display: block!important;
+		text-align: center;
+		.wrapperitempremios, .itemProyecto{
+			width: 49%!important;
+			display: inline-block;
+		}
+	}
+	nav.selector-proyectos{
+		ul{
+			display: block!important;
+			text-align: center;
+			li{
+				width: 49%!important;
+				display: inline-block!important;
+			}
+		}
+	}
+	.wrapCatalogo{
+		.wrapitemcatalogo{
+			width: 49%!important;
+			margin: 16px;
+			.views-field-field-img-catalogo{
+				img{
+					width: 46%!important;
+				}
+			}
+		}
+	}
+	.views-field-field-img-catalogo{
+		height: inherit!important;
+		img{
+			margin-top: 0px!important;
+		}
+	}
+	.wrapitemcatalogo{
+		margin: 0px!important;
+	}
+
+	// textos y logos del footer
+	.footerItems{
+		.textBottom{
+			margin-top: 20px;
+			text-align: center;
+			strong, span{
+				width: 100%;
+				display: block;
+				text-align: center!Important;
+				padding: 5px 0!important;
+			}		
+		}
+	}
+
+	// testimonios representantes
+	.wrapTestimonios, .test-representantes{
+		.wrapitemtestimonio, .wrapitemtestrepresentaciones{
+			width: 50%!important;
+			padding: 20px!important;
+			text-align: center;
+		}
+	}
+
+	// TELEFONO /  ICONOS REDES SOCIALES
+	.topElementos{
+		padding: 20px;
+	}
+
+	.node-type-galer-a-de-proyectos{
+		.field-name-field-fotos-proyectos{
+			.field-items{
+				.field-item{
+					width: 30%!important;
+				}
+			}
+		}
+	}
+	.espacio{
+		height: 0px!important;
+	}
+	.page-node-21, .page-node-22, .page-node-23, .page-airpro{
+		#page{
+	    	background-position-x: 100%!important;
+		}		
+	}
+}
+
+@media only screen and (max-width: 768px) {
+
+	section.sociosestrategicos{
+		.wrapperLogos{
+			
+		}
+	}
+
+	.wfm-gen {
+		width: 80%!important;
+	}
+	// ajuste a la indicaión del circulo de calidad
+	figure.indicacion{
+		img{
+			margin-top: 14%!important;
+		}
+	}
+	// vuelve a hacer grande texto
+	#block-menu-menu-menu-principal{
+		ul.menu{
+			> li{
+				display: block!important;
+				a{
+					font-size: 1em!important;
+				}
+			}
+		}
+	}
+	section#historia{
+		width: 100%!Important;
+	}
+
+	.videosfp{
+		.wrapperFlex{
+			display: block!Important;
+		.videoYT, .textosLado{
+			width: 100%!important;
+			text-align: center!important;
+			padding: 20px 0;
+		}
+		.videoYT {
+				iframe{
+					float: inherit!important;
+					width: 100%;
+				}
+			}
+		}	
+	}
+
+	.views_slideshow_cycle_main{
+			height: 200px!important;
+	}
+	
+	.wrapperFlex{
+		display: block!important;
+		text-align: center;
+		.itemSifras, .itemLink{
+				width: 100%!important;
+			}
+			.itemLink{
+				height: 50px!important;
+    			margin: 10px 0!important;
+			}
+			.itemSifras{
+				margin: 0 4%!important;
+				width: 40% !important;
+				padding: 14px!important;
+				display: inline-block!important;
+
+				span{
+					font-size: 0.9em!important;
+				}
+				.numero{
+					font-size: 2.3em!important;
+				}
+			}
+		}
+
+		.linksProyectos{
+			display: block!important;
+			.boxBeigeclaro, .boxBeigeoscuro{
+				width: 49%!important;
+				display: inline-block!important;
+				height: 170px!important;
+			}
+		}
+		.wrapperTYL{
+			.wrapperFlex2{
+				display: block!important;
+				.textos, .logos{
+					width: 100%!important;
+				}
+				.textos{
+					padding: 20px 0!important;
+					span, strong{
+						width: 100%!important;
+						text-align: center!important;
+					}
+				}
+				.logos{
+					margin-top: 20px!important;
+				}
+			}
+		}
+	#views_slideshow_controls_text_slideshow-block_1{
+		width: 90%!important;
+	}
+	.videosfp{
+		padding: 0px!important;
+	}
+
+	// catalogo
+	.wrapCatalogo{
+		.wrapitemcatalogo{
+			width: 95%!important;
+			.views-field-field-img-catalogo{
+				img{
+					width: 90%!important;
+				}
+			}
+		}
+	}
+	// proyectos terminados
+
+	nav.selector-proyectos{
+		margin-top: -65px!important;
+		ul{
+			li{
+				div{
+					padding: 14px!important;
+					margin: 10px 0!important;
+					background: $verde!important;
+					@include border-radius(3px);
+					&:hover, &:focus {
+						background: $azul!important;
+						color: $blanco;
+					}
+				}
+			}
+		}
+	}
+	.topElementos{
+		@include flex-wrap(wrap);
+		.telefonoGrande{
+			width: 100%!important;
+			padding: 20px 0;
+			text-align: center!important; 
+		}
+	}
+	.wrapLogosRedes, .goContact{
+		
+	}
+	.blogWrapper{
+		.view-content{
+			.blogitemwrapper {
+				.views-field-title{
+					span{
+						a{
+							font-size: 1.5em!important;
+						}
+					}
+				}
+				.views-field-body{
+					text-align: left!important;
+					padding: 8px!important;
+				}
+			}
+		}
+	}
+	.page-noticias{
+		.views-field-title{
+			width: 90%!important;
+			font-size: 1.5em!important;
+		}
+	}
+
+	.node-type-galer-a-de-proyectos{
+		.field-name-field-fotos-proyectos{
+			.field-items{
+				.field-item{
+					width: 45%!important;
+				}
+			}
+		}
+	}
+
+}
+
+@media only screen and (max-width: 480px){
+	.wfm-gen {
+		width: 97%!important;
+	}
+	.itemServicio{
+		svg{
+			width: 50px!important;
+		}
+	}
+	#block-block-4{
+		padding: 0px 0px 10px 0px!important;
+			h1{
+				font-size: 1.3em!important;
+			}
+		} 
+	// ajuste a la indicaión del circulo de calidad
+	figure.indicacion{
+		img{
+			width: 60%!important;
+			margin-top: 25%!important;
+		}
+	}
+	.views_slideshow_cycle_main{
+			height: 200px!important;
+	}
+	// SVG
+	.ciclodecalidad{
+		svg{
+			height: 294px!important;
+		}
+	}
+	.wrapperPremios, .wrapProyectosTerminados{
+		.wrapperitempremios, .itemProyecto{
+			width: 95%!important;
+		}
+	}
+	// testimonios representantes
+	.wrapTestimonios, .test-representantes{
+		.wrapitemtestimonio, .wrapitemtestrepresentaciones{
+			width: 100%!important;
+			padding: 20px!important;
+			text-align: center;
+		}
+	}
+
+	.node-type-galer-a-de-proyectos{
+		.field-name-field-fotos-proyectos{
+			.field-items{
+				.field-item{
+					width: 100%!important;
+				}
+			}
+		}
+	}
+}
+
+
+

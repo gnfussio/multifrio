@@ -222,19 +222,27 @@
 // Blog
 
 .blogWrapper{
-	width: colms(1);
+
 	margin: 0 auto;
 	.view-content{
+
+		-moz-column-count: 3;
+		-moz-column-gap: 35px;
+		-webkit-column-count: 3;
+		-webkit-column-gap: 35px;
+		column-count: 3;
+		column-gap: 35px;
+
 		.blogitemwrapper {
 			margin-bottom: 40px;
 			clear: both;
 			.views-field-title{
 				text-align: left;
 				padding: 0 0 20px 0;
-				margin-left: 32%;
+				/*margin-left: 32%;*/
 				span{
 					a{
-						font-size: 2.5em;
+						font-size: 2em;
 						color: $azul;
 						text-decoration: none;
 						@include transicion(300ms);
@@ -245,8 +253,8 @@
 				}
 			}
 			.views-field-field-foto-blog{
-				float: left;
-				width: 30%;
+				/*float: left;
+				width: 30%;*/
 				a{
 					img{
 						@include wyh;
@@ -258,7 +266,7 @@
 				}
 			}
 			.views-field-body{
-				margin-left: 32%;
+				/*margin-left: 32%;*/
 				padding: 0;
 				p, ul li{
 					color: $gris;

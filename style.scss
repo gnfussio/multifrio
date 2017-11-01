@@ -318,25 +318,51 @@ section.sociosestrategicos{
 	background: $verde;
 }
 
+
+
+    h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    color: white;
+    top: 28px;
+    position: relative;
+}
+
+    
+ 
+ .fondoazul {
+    background: #004990;
+    height: 150px;
+    width: 100%;
+}
+
 .linksProyectos{
+
+
 	@include displayInLineTotal;
 
 		.boxBeigeclaro{
 			background: url(/sites/default/files/enproceso.jpg);
+			background-repeat: no-repeat;
 			@include bgcover;
 			background-position-y: -160px;
 			span, strong{
-				width: 100%;
+				width: 90%;
 			}
 			span, strong, a{
 				float: right;
 				margin-right: 30px;
 				text-align: right;
+				 font-size: 20px;
+				 margin-top: 10%;
 			}
 			span, strong{
 				text-shadow: 1px 1px 1px $negro;
 			}
 		}
+
 		.boxBeigeoscuro{
 			background: url(/sites/default/files/cortijo.jpg);
 			@include bgcover;
@@ -346,6 +372,8 @@ section.sociosestrategicos{
 			span, strong, a{
 				float: left;
 				margin-left: 30px;
+				    font-size: 20px;
+				    margin-top: 10%;
 			}
 			span, strong{
 				text-shadow: 1px 1px 1px #000000;
@@ -353,8 +381,8 @@ section.sociosestrategicos{
 		}
 
 		.boxBeigeclaro, .boxBeigeoscuro{
-			height: 240px;
-			width: 49.9%;
+			height: 400px;
+			width: 100%;
 			padding: 30px 0;
 			position: relative;
 			margin-bottom: 50px;
@@ -369,11 +397,11 @@ section.sociosestrategicos{
 			.btnProyectos{
 				position: absolute;
 				top: 100%;
-				width: 100%;
+				/*width: 100%;*/
 				text-align: center;
 				a{
 					display: block;
-					width: 100%;
+				/*width: 100%;*/
 					margin: 0;
 					padding: 12px 0;
 					text-transform: uppercase;
@@ -1145,12 +1173,13 @@ section.videos{
 				.tituloProyecto{
 					position: absolute;
 					z-index: 2;
-					top: 5px;
+					top: 100px;
 					padding: 3px 4px;
 					background: rgba($negro, 0.8);
 					color: $blanco;
-					font-size: 0.8em;
+					font-size: 1.1em;
 					font-style: italic;
+					 width: 100%;
 				}
 			}
 		}
@@ -1305,4 +1334,7 @@ section.videos{
 
 
 body{display:inherit}
+
+
+
 

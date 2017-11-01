@@ -225,26 +225,20 @@
 
 	margin: 0 auto;
 	.view-content{
-
-		-moz-column-count: 3;
-		-moz-column-gap: 35px;
-		-webkit-column-count: 3;
-		-webkit-column-gap: 35px;
-		column-count: 3;
-		column-gap: 35px;
-
 		.blogitemwrapper {
 			margin-bottom: 40px;
 			clear: both;
 			.views-field-title{
 				text-align: left;
-				padding: 0 0 20px 0;
-				/*margin-left: 32%;*/
+				padding: 20px 0;
 				span{
 					a{
-						font-size: 2em;
+					    font-size: 1.5rem;
+					    text-transform: none;
+					    display: block;
 						color: $azul;
 						text-decoration: none;
+						line-height: 30px;
 						@include transicion(300ms);
 						&:hover{
 							color: $verde;

@@ -242,7 +242,7 @@ section.sociosestrategicos{
 
 #views_slideshow_controls_text_slideshow-block_1{
     position: absolute;
-    z-index: 9;
+    z-index: 19;
     top: 45%;
 	width: 100%;
 	span{
@@ -340,14 +340,16 @@ section.sociosestrategicos{
 
 .linksProyectos{
 
-
 	@include displayInLineTotal;
+
+	.wrapperFlex{
+
+	}
 
 		.boxBeigeclaro{
 			background: url(/sites/default/files/enproceso.jpg);
 			background-repeat: no-repeat;
 			@include bgcover;
-			background-position-y: -160px;
 			span, strong{
 				width: 90%;
 			}
@@ -1265,6 +1267,15 @@ section.videos{
 	.field-name-body{
 		p, ul li{
 			color: $gris;
+			font-size: 1.1em;
+		}
+		li{
+			list-style: disc;
+			line-height: 22px;
+		}
+		strong{
+			font-weight: bolder;
+			font-weight: 700;
 		}
 	}
 }

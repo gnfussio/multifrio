@@ -315,12 +315,6 @@
 
 @media only screen and (max-width: 768px) {
 
-	section.sociosestrategicos{
-		.wrapperLogos{
-			
-		}
-	}
-
 	.wfm-gen {
 		width: 80%!important;
 	}
@@ -397,6 +391,11 @@
 				width: 49%!important;
 				display: inline-block!important;
 				height: 170px!important;
+				a{
+					span{
+						font-size: 0.9em!important;
+					}
+				}
 			}
 		}
 		.wrapperTYL{
@@ -467,14 +466,6 @@
 	}
 	.blogWrapper{
 		.view-content{
-			
-			-moz-column-count: 1;
-		-moz-column-gap: 5px;
-		-webkit-column-count: 1;
-		-webkit-column-gap: 5px;
-		column-count: 1;
-		column-gap: 5px;
-
 			.blogitemwrapper {
 				.views-field-title{
 					span{
@@ -503,6 +494,13 @@
 				.field-item{
 					width: 45%!important;
 				}
+			}
+		}
+	}
+	.blogWrapper{
+		.view-content{
+			.blogitemwrapper {
+				width: 45%!important;
 			}
 		}
 	}
@@ -560,6 +558,13 @@
 				.field-item{
 					width: 100%!important;
 				}
+			}
+		}
+	}
+	.blogWrapper{
+		.view-content{
+			.blogitemwrapper {
+				width: 100%!important;
 			}
 		}
 	}

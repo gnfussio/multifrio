@@ -178,7 +178,7 @@ section.sociosestrategicos{
 		@include flex-wrap(wrap);
 		figure{
 			padding: 0 4px;
-			min-width: 200px;
+			max-width: 160px;
 			text-align: center;
 			img{
 				width: 80%;
@@ -1175,7 +1175,7 @@ section.videos{
 				.tituloProyecto{
 					position: absolute;
 					z-index: 2;
-					top: 100px;
+					bottom: 0px;
 					padding: 3px 4px;
 					background: rgba($negro, 0.8);
 					color: $blanco;

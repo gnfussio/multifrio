@@ -30,9 +30,13 @@
 			text-decoration: none;
 		}
 	}
+	.view-content{
+		@include flexo2;
+		@include flex-wrap(wrap);
+	}
 	.wrapitemnoticia{
-		width: 100%;
-		margin-bottom: 80px;
+		width: 46%;
+		margin: 0 12px 80px 12px;
 		.views-field-title{
 			span{
 				a{
@@ -41,11 +45,10 @@
 			}
 		}
 		.views-field-title{
-			width: 60%;
 			margin: 0 auto;
+			font-size: 1.2em;
 		}
 		.views-field-field-img-noticia{
-			width: 60%;
 			margin: 0 auto;
 			.field-content{
 				a{
@@ -57,7 +60,6 @@
 			}
 		}
 		.views-field-field-contenido-noticia{
-			width: 75%;
 			margin: 0 auto;
 			.field-content{
 				p{

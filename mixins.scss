@@ -1,81 +1,15 @@
-@import "compass/reset";
-@import "compass/css3";
-
 // colores
 
-$blanco : #FFF;
-$negro : #000;
-$gris : #797978;
-$grisOscuro: #333;
-$grisClaro : #efefef;
-$grisClaro2 : #e8e8e8;
-$grisClaro3 : #666;
-$rojo : #c7535b;
-$morado: #7e2b56;
-$tomate : #dd705c;
-$azul : #004990;
-$verde : #9ac21b;
-$verdeClaro : lighten($verde, 20);
-$pink : pink;
-$cafe: #5F3711;
-$cafeOscuro: #381F0B;
-$beige: #D4C098;
-$beigeClaro: #E2D5C1;
+$negro: #000;
+$blanco: #FFF;
+$azul: #004992;
+$azul2: #004990;
+$verde: #99c319;
+$grisClaro: #efefef;
+$grisOscuro: #424242;
+$grisTextos: #565656;
 
-// tipografía
-
-$tipo: 'Montserrat', sans-serif;
-$tipo2: 'Oswald', sans-serif;
-$times: 'Times', serif;
-// mixins
-
-// cols
-$at : 100%;
-$un : 0.833;
-$maxcols : 12;
-
-@mixin transicion($val){
-	-webkit-transition: $val;
-	-moz-transition: $val;
-	-o-transition: $val;
-	transition: $val;
-}
-
-@mixin background($val){
-	 -webkit-background-size: $val;
-	 -moz-background-size: $val;
-	 -o-background-size: $val;
-	 background-size: $val;
-}
-
-@mixin linksViews{ // estilos para el title de los productos en views productos
-	text-transform: uppercase;
-	text-decoration: none;
-	font-family: $times;
-	color: $gris;
-}
-
-@mixin bgcover{
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-ms-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-
-@mixin viewsnormal{
-	margin-bottom: 20px;
-}
-
-@mixin displayInLineTotal{
-	display: inline-block;
-	width: 100%;
-}
-
-@mixin wyh{
-	width: 100%;
-	height: auto;
-}
+$tipo: 'Source Sans Pro', sans-serif;
 
 @mixin flexo{
 	@include display-flex(flex);
@@ -83,6 +17,13 @@ $maxcols : 12;
 	@include justify-content(center);
 }
 
+@mixin btn-rnd {
+		padding: 8px 12px;
+		border-radius: 999rem;
+		bottom: 0;
+		letter-spacing: .6;
+		font-size: 1rem;
+}
 
 @mixin flexo2{
 	@include display-flex(flex);
@@ -96,46 +37,14 @@ $maxcols : 12;
 	@include justify-content(center);
 }
 
-@mixin col-3{
-	display: inline-block;
-	width: 32%;
-	min-width: 280px;
+@mixin wyh {
+	width: 100%;
+	height: auto;
 }
 
-@mixin col-4{
-	display: inline-block;
-	width: 22%;
-	min-width: 280px;
-}
-
-@mixin borderRadius($val) {
-	-webkit-border-radius: $val;
-	-moz-border-radius: $val;
-	border-radius: $val;
-}
-
-@mixin keyframes($animation-name) {
-    @-webkit-keyframes #{$animation-name} {
-        @content;
-    }
-    @-moz-keyframes #{$animation-name} {
-        @content;
-    }  
-    @-ms-keyframes #{$animation-name} {
-        @content;
-    }
-    @-o-keyframes #{$animation-name} {
-        @content;
-    }  
-    @keyframes #{$animation-name} {
-        @content;
-    }
-}
-
-@mixin animation($str) {
-  -webkit-animation: #{$str};
-  -moz-animation: #{$str};
-  -ms-animation: #{$str};
-  -o-animation: #{$str};
-  animation: #{$str};      
+@mixin transicion($val){
+	-webkit-transition: $val;
+	-moz-transition: $val;
+	-o-transition: $val;
+	transition: $val;
 }

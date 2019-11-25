@@ -1,331 +1,315 @@
-@import "compass/reset";
-@import "compass/css3";
 @import "mixins.scss";
+@import "compass/css3";
 
-// noticias
+// vistas proyectos
 
-@function colms($n){
-	@return $at / $n;
+.view-proyectos, .view-block-proyectos-en-fornt-page{
+  .view-filters{
+    margin-bottom: 30px;
+    .views-exposed-widgets{
+      @include flexo3;
+      @include flex-wrap(wrap);
+      .views-exposed-widget{
+        width: 50%;
+        label{
+          margin-bottom: 16px;
+          display: block;
+          text-align: center;
+        }
+        #edit-submit-proyectos{
+          float: right;
+          background: $verde;
+          color:$blanco;
+        }
+        .form-submit{
+          border-radius: 22px;
+        }
+      }
+    }
+
+      .form-select {
+      	display: block;
+      	font-size: 16px;
+      	font-family: sans-serif;
+      	font-weight: 700;
+      	color: darken($grisClaro, 20%);
+      	padding: 0.2em 1.2em 0em 0.8em;
+      	width: 100%;
+      	max-width: 100%; /* useful when width is set to anything other than 100% */
+      	box-sizing: border-box;
+      	margin: 0;
+      	border:none;
+      	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+      	border-radius: .8em;
+      	-moz-appearance: none;
+      	-webkit-appearance: none;
+      	appearance: none;
+      	background-color: $grisClaro;
+      }
+      /* Hide arrow icon in IE browsers */
+      .form-select::-ms-expand {
+      	display: none;
+      }
+      /* Hover style */
+      .form-select:hover {
+      	border-color: #888;
+      }
+      /* Focus style */
+      .form-select:focus {
+      	border-color: #aaa;
+      	/* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+      	box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+      	box-shadow: 0 0 0 3px -moz-mac-focusring;
+      	color: #222;
+      	outline: none;
+      }
+
+      /* Set options to normal weight */
+      .form-select option {
+      	font-weight:normal;
+      }
+
+      /* Support for rtl text, explicit support for Arabic and Hebrew */
+      *[dir="rtl"] .form-select, :root:lang(ar) .form-select, :root:lang(iw) .form-select {
+      	background-position: left .7em top 50%, 0 0;
+      	padding: .6em .8em .5em 1.4em;
+      }
+
+      .form-select:disabled:hover, .select-css[aria-disabled=true] {
+      	border-color: #aaa;
+      }
+  }
 }
 
-@function colms2($y){
-	$pres : percentage(($y / 10) * $un);
-	@return $pres;
+// prtoyectos y proyectos similares
+
+.view-proyectos-similares{
+  .item-list{
+    display: none;
+  }
 }
 
-@function pad ($p){
-	$pad : ($p / 10) * $un;
-	$vpad : percentage($pad / $maxcols);
-	@return $vpad;
-}
-
-// **************** Noticias
-
-.views-noticias-wrap{
-	text-align: center;
-	h3{
-		a{
-			color: $verde;
-			font-size: 0.9em;
-			text-decoration: none;
-		}
-	}
-	.view-content{
-		@include flexo2;
-		@include flex-wrap(wrap);
-	}
-	.wrapitemnoticia{
-		width: 46%;
-		margin: 0 12px 80px 12px;
-		.views-field-title{
-			span{
-				a{
-					
-				}
-			}
-		}
-		.views-field-title{
-			margin: 0 auto;
-			font-size: 1.2em;
-		}
-		.views-field-field-img-noticia{
-			margin: 0 auto;
-			.field-content{
-				a{
-					img{
-						width: 100%;
-						height: auto;
-					}
-				}
-			}
-		}
-		.views-field-field-contenido-noticia{
-			margin: 0 auto;
-			.field-content{
-				p{
-					text-align: center;
-					font-size: 1.2em;
-					margin-left: 20px;
-					.views-more-link{
-						margin: 0 auto;
-						text-align: center;
-					}
-				}
-			}
-		}
-	}
-}
-
-.views-more-link{
-	display: block;
-	padding: 6px 10px;
-	background: $verde;
-	color: $blanco;
-	text-decoration: none;
-	width: 120px;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 1.1em;
+.view-proyectos,
+.view-proyectos-similares,
+.view-block-proyectos-en-fornt-page,
+.view-block-notas-de-interes-frontpage,
+.view-notas-de-interes{
+  .view-content{
+    @include flexo2;
+    @include flex-wrap(wrap);
+    @include justify-content(space-between);
+  }
+  .item-proyecto, .item-notas{
+    width: 32%;
+  }
+  .item-proyecto, .item-notas{
+    margin-bottom: 20px;
+    a{
+      display: block;
+      text-decoration: none;
+      @include transicion(300ms);
+      &:hover{
+        color: $verde;
+      }
+    }
+    a:nth-child(1){ // foto
+      overflow: hidden;
+      @include transicion(300ms);
+      img{
+        @include transicion(300ms);
+        @include wyh;
+      }
+    }
+    a:nth-child(2){ // title
+      color: $negro;
+      font-size: 20px;
+      padding: 5px 0 0 0;
+      &:hover{
+        color: $verde;
+      }
+    }
+    .taxo-proyecto{
+      color: $grisOscuro;
+      font-size: 14px;
+    }
+    .field-content{
+      margin-top: 20px;
+      background: $azul;
+      a{
+        color: $blanco;
+      }
+    }
     &:hover{
-    	background: $verdeClaro;
-    	color: $blanco;
+        a:nth-child(1) img{
+          transform: scale(1.4);
+      }
+    }
+  }
+}
+
+.region-bottom-content,
+.region-footer{
+  .block-views{
+    margin-top: 30px;
+    h2{
+      display: block;
+      max-width: 1140px;
+      margin: 0 auto 20px auto;
+      color: $azul;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.view-block-proyectos-en-fornt-page{
+  .item-proyecto{
+    a:nth-child(2){ // title
+      color: $grisTextos;
+      font-weight: 300;
+      font-size: 24px;
+      padding: 14px 0 8px 0;
+    }
+  }
+  .item-list{display: none;}
+  .view-footer{
+    h4{
+      a{
+        color: $azul;
+        @include transition(300);
+        &:hover{
+          color: $verde;
+        }
+      }
+    }
+  }
+}
+
+.view-block-notas-de-interes-frontpage{
+    margin-top: 30px;
+    .item-list{display: none;}
+    .item-notas{
+      a:nth-child(2){
+        font-size: 18px;
+        @include transicion(300);
+        &:hover{
+          color: $verde;
+          text-decoration: none;
+        }
+      }
+      span{
+        background: $blanco!important;
+        color: $grisTextos;
+      }
     }
 }
 
-// testimonios
+.view-notas-de-interes{
+  margin-top: 20px;
+  .view-content{
+    @include flexo2;
+    @include flex-wrap(wrap);
+    @include justify-content(space-between);
+    .item-notas{
+      width: 31%;
+      padding: 0 1% 30px 1%;
+      a:nth-child(1){
+        img{
+          @include wyh;
+        }
+      }
+      a:nth-child(2){
+        padding: 12px 0;
+        color: $negro;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+        @include transicion(300ms);
+        &:hover{
+          color: $verde;
+        }
+      }
+      a:nth-child(3) {
+        display: inline-block;
+          @include btn-rnd;
+          background: $azul;
+          color: $blanco;
+          @include transicion(300ms);
+          &:hover{
+            text-decoration: none;
+            background: lighten($azul, 20%);
+          }
+      }
 
-.wrapTestimonios, .test-representantes{
-	vertical-align: top;
-		.view-content{
-			@include flexo2;
-			@include flex-wrap(wrap);
-		}
-	.wrapitemtestimonio, .wrapitemtestrepresentaciones{
-		padding: 0px 12px 20px 12px;
-		width: 32%;
-		.views-field-title{
-			padding: 14px 0;
-			a{
-				font-size: 1.3em;
-				color: $azul;
-			}
-		}
-		.views-field-field-nombre{
-				font-weight: bold;
-		}
-		.views-field-body{
-			p{
-				padding-top: 20px;
-				color: $grisOscuro;
-				text-align: justify;
-			}
-		}
-		.views-field-view-node{
-			span{
-			border: none;
-				a{
-					color: $blanco;
-					background: $azul;
-					padding: 5px 12px;
-					@include border-radius(3px);
-					@include transicion(300ms);
-					&:hover{
-						tex-decoration: none;
-						background: $verde;
-					}
-				}
-			}
-		}
-	}
+      &:hover{
+          a:nth-child(1) img{
+            transform: scale(1.4);
+        }
+      }
+
+    }
+  }
 }
 
-
-// catálogo
-
-.wrapCatalogo{
-		width: 100%;
-		display: block;
-		margin: 0 auto;
-
-		.view-content{
-			text-align: center;
-			.wrapitemcatalogo:nth-child(1) {
-				.views-field-field-img-catalogo{
-					a{
-						img{
-							margin-top: 25%;
-							transform: scale(1.7);
-						}
-					}
-				}
-			}
-		}
-
-	.wrapitemcatalogo{
-		display: inline-block;
-		padding: 12px;
-		margin: 0 20px;
-		width: 22%;
-    	vertical-align: top;
-
-    	.views-field-field-img-catalogo, .views-field-title{
-			text-align: center;
-    	}
-
-		.views-field-field-img-catalogo{
-			height: 220px;
-			img{
-				max-width: 120px;
-				height: auto;
-				&:hover{
-					opacity: 0.8;
-				}
-			}
-		}
-
-		.views-field-field-descripcion{
-			.field-content{
-				p{
-					font-size: 0.8em;
-					color: $gris;
-				}
-			}
-		}
-
-		.views-field-title{
-			text-align: center;
-			h5{
-				a{
-					color: $verde;
-					text-decoration: none;
-					font-weight: lighter;
-					&:hover{
-						color: $rojo;
-					}
-				}
-			}
-		}
-	}
+.pager{
+  li{
+    a{
+      color: $azul;
+      @include transicion(300ms);
+      &:hover{
+        background: $verde!important;
+      }
+    }
+  }
+  li.pager-current{
+    background: $verde!important;
+  }
 }
 
-// puestos vacantes
-.page-puestos-de-empleo-vacantes{
-	.views-field-title{
-		font-size: 1.4em;
-		padding: 12px 0;
-		font-weight: bold;
-		a{
-			color: $verde;
-		}
-	}	
+.page-trabaje-con-nosotros{
+  .view-content{
+    @include flexo2;
+    @include flex-wrap(wrap);
+  }
+  .puesto{
+    text-align: center;
+    padding: 20px;
+    margin: 20px 12px;
+    width: 28%;
+    .views-field-title{
+      padding: 14px 0;
+      span{
+        a{
+          color: $grisTextos;
+          &:hover{
+            color: $verde;
+          }
+        }
+      }
+    }
+    .views-field-field-icono{
+      img{
+        margin: 0 auto;
+      }
+    }
+  }
+  .puesto:nth-child(odd){
+    border: solid $verde 2px;
+  }
+  .puesto:nth-child(even){
+    border: solid $azul 2px;
+  }
 }
 
+// proyectos
 
-// Blog
-
-.blogWrapper{
-
-	margin: 0 auto;
-	.view-content{
-		.blogitemwrapper {
-			margin-bottom: 40px;
-			position: relative;
-			clear: both;
-			border-bottom: 1px solid $gris;
-			.views-field-title{
-				text-align: left;
-				padding: 20px 0;
-				span{
-					a{
-					    font-size: 1.5rem;
-					    text-transform: none;
-					    display: block;
-						color: $azul;
-						text-decoration: none;
-						line-height: 30px;
-						@include transicion(300ms);
-						&:hover{
-							color: $verde;
-						}
-					}
-				}
-			}
-			.views-field-field-foto-blog{
-				/*float: left;
-				width: 30%;*/
-				a{
-					img{
-						@include wyh;
-						@include transicion(300ms);
-						&:hover{
-							opacity: 0.8;
-						}
-					}
-				}
-			}
-			.views-field-body{
-				/*margin-left: 32%;*/
-				padding: 0;
-				p, ul li{
-					color: $gris;
-					text-align: justify;
-				}
-				.views-more-link {
-				    text-align: center;
-				}
-			}
-			.views-field-field-autor{
-				p{
-					text-transform: uppercase;
-					font-size: 11px;
-					letter-spacing: 1px;
-					color: $gris;
-				}
-			}
-			.views-field-view-node{
-				position: absolute;
-				top: 0%;
-				width: 100%;
-				height: 100%;
-				background: rgba($blanco, 0.8);
-				z-index: 2;
-				text-align: center;
-				@include transicion(300ms);
-				opacity: 0;
-				a{
-					display: block;
-					background: $verde;
-					margin-top: 50%;
-					margin-left: auto;
-					margin-right: auto;
-					color: $blanco;
-					font-size: 12px;
-					max-width: 110px;
-					text-transform: uppercase;
-					padding: 8px 18px;
-					text-decoration: none;
-					@include transicion(300ms);
-					&:hover{
-						background: $azul;
-					}
-				}
-			}
-			&:hover{
-				.views-field-view-node{
-					opacity: 1;
-				}
-			}
-		}
-	}
+.view-proyectos{
+  .view-content{
+    @include flexo2;
+    @include flex-wrap(wrap);
+    @include justify-content(space-between);
+  }
+  .item-proyecto{
+    width: 32%;
+    min-width: 220px;
+  }
 }
-
-
-
-
-
-
-
-
-
-
-

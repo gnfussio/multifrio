@@ -147,7 +147,7 @@
   .view-notas-de-interes,
   .view-proyectos-similares {
     a:nth-child(1){
-      width: 100px;
+      width: 108px;
       float: left;
     }
     a:nth-child(2){
@@ -341,10 +341,21 @@
       .grupo-titulo-duracion {
           .grupo-icono-title,
           .grupo-icono-duracion{
+            display: block!important;
               border-right: none!important;
               width: 100%!important;
               margin-bottom: 20px;
               text-align: center;
+              .field-name-field-icono-duracion{
+                .field-item{
+                  img{
+                    margin: 0 auto!important;
+                  }
+                }
+              }
+              .field-name-field-duracion{
+                margin-top: 12px;
+              }
               .field-name-title{
                 h2{
                   margin: 12px 0!important;
